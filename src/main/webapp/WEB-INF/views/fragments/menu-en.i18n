@@ -57,6 +57,7 @@ master.menu.administrator.administrator-dashboard = Dashboard
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
+master.menu.patron.chimpum = List My Chimpums
 master.menu.patron.favourite-link = Favourite link
 master.menu.patron.patron-dashboard = Dashboard
 master.menu.patron.list-patronage-reports = Patronage reports

@@ -59,6 +59,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 # master.menu.patron ####################################################
 
 master.menu.patron = Patrocinador
+master.menu.patron.chimpum = Listar Mis Chimpums
 master.menu.patron.favourite-link = Enlace favorito
 master.menu.patron.patron-dashboard = Panel de indicadores
 master.menu.patron.list-patronage-reports = Reportes de patrocinios

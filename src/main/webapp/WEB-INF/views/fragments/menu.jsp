@@ -65,6 +65,8 @@
 			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
       		<acme:menu-suboption code="master.menu.patron.list-patronage-reports" action="/patron/patronage-report/list"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.patron.chimpum" action="/patron/chimpum/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
