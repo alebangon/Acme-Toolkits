@@ -36,4 +36,5 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	List<Chimpum> findAllChimpumsByPatronId(int id);
 	
 	
+	
 }
