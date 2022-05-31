@@ -1,21 +1,23 @@
-package acme.features.patron.chimpum;
+package acme.features.inventor.chimpum;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chimpum;
+import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
-import acme.roles.Patron;
+import acme.roles.Inventor;
 @Service
-public class PatronChimpumCreateService  implements AbstractCreateService<Patron, Chimpum>{	
+public class InventorChimpumCreateService  implements AbstractCreateService<Inventor, Chimpum>{	
 	@Autowired
-	protected PatronChimpumRepository repository;
+	protected InventorChimpumRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
@@ -29,9 +31,12 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+		final List<Item> items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+		System.out.println(items);
+		items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
+		System.out.println(items);
 //		request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","item");
-		if(this.repository.allTools(true).isEmpty()) {			
+		if(items.isEmpty()) {			
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link");
 		}else {
 			entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
@@ -45,9 +50,16 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-
+		List<Item> items;
+		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+		
+		if(!items.isEmpty()) {
+			items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
+		}
+		
+			
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");
-		model.setAttribute("items", this.repository.allTools(true));
+		model.setAttribute("items", items);
 
 	}
 

@@ -1,21 +1,23 @@
-package acme.features.patron.chimpum;
+package acme.features.inventor.chimpum;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chimpum;
+import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
-import acme.roles.Patron;
+import acme.roles.Inventor;
 @Service
-public class PatronChimpumUpdateService implements AbstractUpdateService<Patron, Chimpum>{
+public class InventorChimpumUpdateService implements AbstractUpdateService<Inventor, Chimpum>{
 	@Autowired
-	protected PatronChimpumRepository repository;
+	protected InventorChimpumRepository repository;
 
 	// AbstractUpdateService<Patron, Patronage> -------------------------------------
 
@@ -23,8 +25,17 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
+		boolean result;
+		int chimpumID;
+		Inventor inv;
+		Chimpum chimpum;
+		
+		chimpumID = request.getModel().getInteger("id");
+		chimpum = this.repository.findChimpumById(chimpumID);
+		inv =this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId());
+		result = chimpum.getItem().getInventor().equals(inv);
 
-		return true;
+		return result;
 	}
 
 	@Override
@@ -102,9 +113,11 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-
+		final List<Item> items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+		if(!items.isEmpty())
+			items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
-		model.setAttribute("items", this.repository.allTools(true));
+		model.setAttribute("items", items);
 		model.setAttribute("itemId",  entity.getItem().getId());
 	}
 

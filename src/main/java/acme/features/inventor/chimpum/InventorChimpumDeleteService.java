@@ -1,4 +1,4 @@
-package acme.features.patron.chimpum;
+package acme.features.inventor.chimpum;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,14 +8,14 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractDeleteService;
-import acme.roles.Patron;
+import acme.roles.Inventor;
 @Service
-public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron, Chimpum> {
+public class InventorChimpumDeleteService  implements AbstractDeleteService<Inventor, Chimpum> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected PatronChimpumRepository repository;
+	protected InventorChimpumRepository repository;
 
 	// AbstractDeleteService<Patron, Patronage> -------------------------------------
 
@@ -23,16 +23,17 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
-
 		boolean result;
-		int patronageId;
-		Chimpum patronage;
+		int chimpumID;
+		Inventor inv;
+		Chimpum chimpum;
+		
+		chimpumID = request.getModel().getInteger("id");
+		chimpum = this.repository.findChimpumById(chimpumID);
+		inv =this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId());
+		result = chimpum.getItem().getInventor().equals(inv);
 
-		patronageId = request.getModel().getInteger("id");
-		patronage = this.repository.findChimpumById(patronageId);
-		result = (patronage != null);
-
-		return result;
+		return result; 
 	}
 
 	@Override
@@ -78,8 +79,8 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 		assert request != null;
 		assert entity != null;
 
-
-		this.repository.delete(entity);
+		if(!entity.getItem().isPublished())
+			this.repository.delete(entity);
 	}
 	
 

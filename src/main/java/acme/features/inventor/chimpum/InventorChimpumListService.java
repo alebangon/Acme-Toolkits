@@ -1,4 +1,4 @@
-package acme.features.patron.chimpum;
+package acme.features.inventor.chimpum;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +8,13 @@ import acme.entities.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
-import acme.roles.Patron; 
+import acme.roles.Inventor; 
  
 @Service 
-public class PatronChimpumListService implements AbstractListService<Patron, Chimpum> { 
+public class InventorChimpumListService implements AbstractListService<Inventor, Chimpum> { 
 	 
 	@Autowired 
-	protected PatronChimpumRepository repository; 
+	protected InventorChimpumRepository repository; 
  
 	@Override 
 	public boolean authorise(final Request<Chimpum> request) { 
@@ -27,7 +27,9 @@ public class PatronChimpumListService implements AbstractListService<Patron, Chi
 		assert request != null; 
 		 
 		final Collection<Chimpum> result; 
-		result=this.repository.findAllChimpums();
+		final int UAId = request.getPrincipal().getAccountId();
+		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
+		result=this.repository.findAllChimpumsByInventorId(InventorId);
 		
 		return result;
 	} 
