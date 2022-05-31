@@ -27,9 +27,7 @@ public class PatronChimpumListService implements AbstractListService<Patron, Chi
 		assert request != null; 
 		 
 		final Collection<Chimpum> result; 
-		final int UAId = request.getPrincipal().getAccountId();
-		final int PatronId = this.repository.findPatronByUserAccountId(UAId).getId();
-		result=this.repository.findChimpumsByPatronId(PatronId); 
+		result=this.repository.findAllChimpums();
 		
 		return result;
 	} 

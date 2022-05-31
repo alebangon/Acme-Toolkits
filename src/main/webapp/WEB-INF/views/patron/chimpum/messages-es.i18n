@@ -19,12 +19,19 @@ patron.chimpum.list.label.creationMoment = Momento De Creación
 patron.chimpum.form.label.code = Código
 patron.chimpum.form.label.title = Título
 patron.chimpum.form.label.description = Descripción
+patron.chimpum.form.label.creationMoment = Momento De Creación
 patron.chimpum.form.label.startDate = Fecha De Inicio
 patron.chimpum.form.label.endDate = Fecha De Fin
 patron.chimpum.form.label.budget = Presupuesto
-patron.chimpum.form.label.link = Link
+patron.chimpum.form.label.link = Enlace
 patron.chimpum.form.label.item = Item
 
+patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
+patron.patronage.form.error.duplicated = Código duplicado
+patron.patronage.form.error.negative-budget= Cantidad negativa
+patron.patronage.form.error.too-close-start-date = Fecha de inicio muy cercana(1 mes después mínmo)
+patron.patronage.form.error.one-month = Una semana mínimo entre fechas
+patron.chimpum.form.error.noInventor = Por favor seleccione una tool
 
 patron.chimpum.form.button.update = Actualizar
 patron.chimpum.form.button.delete = Eliminar

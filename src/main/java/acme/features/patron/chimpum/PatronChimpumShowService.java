@@ -18,6 +18,7 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
+		
 		return true;
 	}
 
@@ -26,6 +27,7 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 
 		assert request != null;
 		final int id=request.getModel().getInteger("id"); 
+
 		return this.repository.findChimpumById(id);
 	}
 
@@ -35,7 +37,10 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model,"code","title","description", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
+		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
+		model.setAttribute("items", this.repository.allTools(true));
+		model.setAttribute("itemId2", entity.getItem().getId());
+
 	}
 
 }

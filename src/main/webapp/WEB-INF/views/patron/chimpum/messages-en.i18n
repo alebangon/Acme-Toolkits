@@ -19,12 +19,20 @@ patron.chimpum.list.label.creationMoment = Creation Moment
 patron.chimpum.form.label.code = Code
 patron.chimpum.form.label.title = Title
 patron.chimpum.form.label.description = Description
+patron.chimpum.form.label.creationMoment = Creation Moment
 patron.chimpum.form.label.startDate = Start Date
 patron.chimpum.form.label.endDate = End Date
 patron.chimpum.form.label.budget = Budget
 patron.chimpum.form.label.link = Link
 patron.chimpum.form.label.item = Item
+inventor.item.form.label.link = 
 
+patron.chimpum.form.error.duplicated = Duplicated Code
+patron.chimpum.form.error.too-close-start-date = Too close start date (1 month after as minimum)
+patron.chimpum.form.error.one-month = At least a week between dates
+patron.chimpum.form.error.negative-budget = The budget must be positive
+patron.chimpum.form.error.non-accepted-currency= Non accepted currency
+patron.chimpum.form.error.noInventor = Please select one inventor
 
 patron.chimpum.form.button.update = Update
 patron.chimpum.form.button.delete = Delete

@@ -15,14 +15,17 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	@Query("Select p from Patron p where p.userAccount.id = :id")
 	Patron findPatronByUserAccountId(int id);
 	
-	@Query("Select c from Chimpum c where c.patron.id = :id")
-	List<Chimpum> findChimpumsByPatronId(int id);
+	@Query("Select c from Chimpum c")
+	List<Chimpum> findAllChimpums();
 
 	@Query("Select c from Chimpum c where c.id = :id")
 	Chimpum findChimpumById(int id);
 	
-	@Query("Select i from Item i")
-	List<Item> allItems();
+	@Query("Select c from Chimpum c where c.code = :code")
+	Chimpum findChimpumByCode(String code);
+	
+	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL")
+	List<Item> allTools(Boolean published);
 
 	@Query("Select i from Item i where i.id = :id")
 	Item findItemById(int id);

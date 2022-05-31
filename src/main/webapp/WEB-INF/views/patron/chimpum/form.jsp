@@ -20,6 +20,7 @@
 	<acme:input-textbox code="patron.chimpum.form.label.code" path="code"/>
 	<acme:input-textbox code="patron.chimpum.form.label.title" path="title"/>
 	<acme:input-textarea code="patron.chimpum.form.label.description" path="description"/>
+	<acme:input-moment code="patron.chimpum.form.label.creationMoment" path="creationMoment" readonly="true"/>
 	<acme:input-moment code="patron.chimpum.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="patron.chimpum.form.label.endDate" path="endDate" />
 	<acme:input-money code="patron.chimpum.form.label.budget" path="budget"/>
@@ -27,32 +28,24 @@
 		<jstl:if test="${command == 'create' or command == 'update'}">	
 	        <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId2 }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:if>	
 	<jstl:if test="${command == 'show'}">
 	 <acme:input-select code="patron.chimpum.form.label.item" path="item">
  		<jstl:forEach items="${items}" var="item">
-			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId }"/>
+			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId2 }"/>
 		</jstl:forEach>
 	</acme:input-select>
-	<acme:input-select code="inventor.item.form.label.tipo" path="tipo">
-		<acme:input-option code="TOOL" value="TOOL"
-			selected="${tipo == 'TOOL'}" />
-		<acme:input-option code="COMPONENT" value="COMPONENT"
-			selected="${tipo == 'COMPONENT'}" />
-	</acme:input-select>
-	<acme:input-textbox code="inventor.item.form.label.name" path="item.name" />
-	<acme:input-textbox code="inventor.item.form.label.code" path="item.code" />
-	<acme:input-textbox code="inventor.item.form.label.technology"
-		path="item.technology" />
-	<acme:input-textarea code="inventor.item.form.label.description"
-		path="item.description" />
-	<acme:input-money code="inventor.item.form.label.retail-price"
-		path="item.retailPrice" />
-	<acme:input-textbox code="inventor.item.form.label.technology"
-		path="item.optionalLink" />
+	<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
+
+	<acme:input-textbox code="inventor.item.form.label.name" path="item.name" readonly="true"/>
+	<acme:input-textbox code="inventor.item.form.label.code" path="item.code" readonly="true"/>
+	<acme:input-textbox code="inventor.item.form.label.technology" path="item.technology" readonly="true"/>
+	<acme:input-textarea code="inventor.item.form.label.description" path="item.description" readonly="true"/>
+	<acme:input-money code="inventor.item.form.label.retail-price" path="item.retailPrice" readonly="true"/>
+	<acme:input-textbox code="inventor.item.form.label.optional-link" path="item.optionalLink" readonly="true"/>
 	</jstl:if>
 	
 	<jstl:choose>

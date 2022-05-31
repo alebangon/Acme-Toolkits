@@ -30,7 +30,7 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 
 		patronageId = request.getModel().getInteger("id");
 		patronage = this.repository.findChimpumById(patronageId);
-		result = (patronage != null&& request.isPrincipal(patronage.getPatron()));
+		result = (patronage != null);
 
 		return result;
 	}
@@ -54,7 +54,7 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "code", "legalStuff", "budget", "startDate", "endDate","link");
+		request.bind(entity, errors, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "endDate","link","published");
+		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 	}
 
 	@Override
