@@ -1,7 +1,7 @@
 package acme.features.inventor.chimpum;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,9 +113,8 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-		final List<Item> items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
-		if(!items.isEmpty())
-			items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
+		final Collection<Item> items;
+		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 		model.setAttribute("items", items);
 		model.setAttribute("itemId",  entity.getItem().getId());

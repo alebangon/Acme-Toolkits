@@ -54,12 +54,12 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command,'show, update, delete') && item.published == false}">
-				<acme:submit code="patron.chimpum.form.button.update" action="/patron/chimpum/update"/> 
-				<acme:submit code="patron.chimpum.form.button.delete" action="/patron/chimpum/delete"/>
+				<acme:submit code="patron.chimpum.form.button.update" action="/inventor/chimpum/update"/> 
+				<acme:submit code="patron.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
 
 		</jstl:when>
 		<jstl:when test="${command=='create'}">
-			<acme:submit code="patron.chimpum.form.button.create" action="/patron/chimpum/create"/>
+			<acme:submit code="patron.chimpum.form.button.create" action="/inventor/chimpum/create"/>
 		</jstl:when>
 		
 	</jstl:choose>	

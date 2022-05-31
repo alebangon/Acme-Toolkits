@@ -1,6 +1,6 @@
 package acme.features.inventor.chimpum;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,9 +48,9 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		final List<Item> items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
-		if(!items.isEmpty())
-			items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
+		final Collection<Item> items;
+		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+
 		
 		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink","item.published");
 		model.setAttribute("items",items);

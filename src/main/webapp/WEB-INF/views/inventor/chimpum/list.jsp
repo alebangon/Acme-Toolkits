@@ -11,4 +11,4 @@
 	<acme:list-column code="patron.chimpum.list.label.end_date" path="endDate"/>
 	<acme:list-column code="patron.chimpum.list.label.creationMoment" path="creationMoment"/>
 </acme:list>  
-<acme:button code="patron.chimpum.list.button.create-chimpum" action="/patron/chimpum/create"/>
+<acme:button code="patron.chimpum.list.button.create-chimpum" action="/inventor/chimpum/create"/>

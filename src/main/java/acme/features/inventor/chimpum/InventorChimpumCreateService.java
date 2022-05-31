@@ -1,7 +1,7 @@
 package acme.features.inventor.chimpum;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +31,8 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		final List<Item> items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
-		System.out.println(items);
-		items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
-		System.out.println(items);
+		Collection<Item> items;
+		items = this.repository.allToolsByInventorId(false, request.getPrincipal().getActiveRoleId());
 //		request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","item");
 		if(items.isEmpty()) {			
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link");
@@ -50,13 +48,10 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-		List<Item> items;
-		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
-		
-		if(!items.isEmpty()) {
-			items.removeAll(this.repository.allToolsWithChimpumByInventorId(false, entity.getItem().getInventor().getId()));
-		}
-		
+		Collection<Item> items;
+		System.out.println(request.getPrincipal().getActiveRoleId());
+		items = this.repository.allToolsByInventorId(false, request.getPrincipal().getActiveRoleId());
+
 			
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");
 		model.setAttribute("items", items);

@@ -65,8 +65,6 @@
 			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
       		<acme:menu-suboption code="master.menu.patron.list-patronage-reports" action="/patron/patronage-report/list"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.patron.chimpum" action="/patron/chimpum/list"/>
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
@@ -76,6 +74,9 @@
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.item.list" action="/inventor/item/list"/>
 			<acme:menu-suboption code="master.menu.inventor.toolkits.list" action="/inventor/toolkit/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.patron.chimpum" action="/inventor/chimpum/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
 			<acme:menu-suboption code="master.menu.inventor.list-proposed-patronages" action="/inventor/patronage/list-proposed"/>
       		<acme:menu-suboption code="master.menu.inventor.patronage-reports" action="/inventor/patronage-report/list"/>

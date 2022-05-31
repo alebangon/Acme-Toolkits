@@ -1,5 +1,6 @@
 package acme.features.inventor.chimpum;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -24,11 +25,10 @@ public interface InventorChimpumRepository extends AbstractRepository{
 	@Query("Select c from Chimpum c where c.code = :code")
 	Chimpum findChimpumByCode(String code);
 	
-	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL and i.inventor.id = :id")
-	List<Item> allToolsByInventorId(Boolean published, int id);
-	@Query("Select c.item from Chimpum c where c.item.published = :published and c.item.tipo = acme.entities.TipoDeItem.TOOL and c.item.inventor.id = :id")
-	List<Item> allToolsWithChimpumByInventorId(Boolean published, int id);
-
+	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL and i.inventor.id = :id and i not in (select c from Chimpum c where c.item.id = i.id)")
+	Collection<Item> allToolsByInventorId(Boolean published, int id);
+//	@Query("Select c.item from Chimpum c where c.item.published = :published and c.item.tipo = acme.entities.TipoDeItem.TOOL and c.item.inventor.id = :id")
+//	List<Item> allToolsWithChimpumByInventorId(Boolean published, int id);
 	
 	@Query("Select i from Item i where i.id = :id")
 	Item findItemById(int id);
