@@ -37,7 +37,10 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 			entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","itemId");
 		}
+		System.out.println("bind"+this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
+		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 	}	
+	
 
 	@Override
 	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
@@ -48,6 +51,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");
 		model.setAttribute("items", this.repository.allTools(true));
+		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 	}
 
@@ -64,6 +68,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		result.setCreationMoment(moment);
+		
 		
 		return result;
 	}
@@ -122,6 +127,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
+		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 		this.repository.save(entity);
 	}
 

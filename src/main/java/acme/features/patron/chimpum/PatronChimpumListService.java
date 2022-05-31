@@ -17,17 +17,29 @@ public class PatronChimpumListService implements AbstractListService<Patron, Chi
 	protected PatronChimpumRepository repository; 
  
 	@Override 
-	public boolean authorise(final Request<Chimpum> request) { 
-		assert request != null; 
-		return true; 
-	} 
+	public boolean authorise(final Request<Chimpum> request) {
+		
+		boolean result=true;
+
+//		int chimpunId = request.getModel().getInteger("id");
+//		int patronId= request.getPrincipal().getAccountId();
+//		if(chimpunId!=patronId) {
+//			result= false;
+//		}
+//		
+//		System.out.println(chimpunId+"+"+patronId);
+
+		return result;
+	}
+
  
 	@Override 
 	public Collection<Chimpum> findMany(final Request<Chimpum> request) { 
 		assert request != null; 
 		 
 		final Collection<Chimpum> result; 
-		result=this.repository.findAllChimpums();
+		
+		result=this.repository.findAllChimpumsByPatronId(request.getPrincipal().getActiveRoleId());
 		
 		return result;
 	} 

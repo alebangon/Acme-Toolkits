@@ -32,5 +32,8 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	
 	@Query("select sc from SystemConfiguration sc")
 	SystemConfiguration findSystemConfiguration();
+	@Query("Select c from Chimpum c where c.patron.id = :id")
+	List<Chimpum> findAllChimpumsByPatronId(int id);
+	
 	
 }

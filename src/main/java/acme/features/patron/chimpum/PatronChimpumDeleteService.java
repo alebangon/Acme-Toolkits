@@ -22,15 +22,15 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
-		assert request != null;
-
-		boolean result;
-		int patronageId;
-		Chimpum patronage;
-
-		patronageId = request.getModel().getInteger("id");
-		patronage = this.repository.findChimpumById(patronageId);
-		result = (patronage != null);
+		
+		
+		boolean result=true;
+		int chimpunId = request.getModel().getInteger("id");
+		int patronId= request.getPrincipal().getActiveRoleId();
+		int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
+		if(patronBuscaId!=patronId) {
+			result= false;
+		}
 
 		return result;
 	}
