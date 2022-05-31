@@ -13,6 +13,8 @@ patron.patron-dashboard.form.label.and-technology = and technology
 patron.patron-dashboard.form.label.colon = :
 patron.patron-dashboard.form.label.componentsTitle = COMPONENTS
 patron.patron-dashboard.form.label.toolsTitle = TOOLS
+patron.patron-dashboard.form.label.chimpumsTitle = CHIMPUMS
+
 patron.patron-dashboard.form.label.patronageTitle = PATRONAGES
 patron.patron-dashboard.form.label.patronage-average-sentence= Average retail price by status
 patron.patron-dashboard.form.label.patronage-deviation-sentence= Deviation retail price by status
@@ -36,10 +38,17 @@ patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total number 
 
 patron.patron-dashboard.form.label.totalNumberOfTools= Total number of tools:
 patron.patron-dashboard.form.label.totalNumberOfComponents= Total number of components: 
+patron.patron-dashboard.form.label.ratioOfItemsWithChimpum	= Ratio of items with Chimpuns
 anonymous.user-account.form.title.create = Sign up
 patron.patron-dashboard.form.label.nohayComponentes =    There are no components to compute metrics (see total metrics information below)
 patron.patron-dashboard.form.label.nohayHerramientas=    There are no tools to compute metrics (see total metrics information below)
 patron.patron-dashboard.form.label.nohayPatrocinios =	 There are no patronages to compute metrics (see total metrics information below)
+patron.patron-dashboard.form.label.nohayChimpums =	 There are no chimpums to compute metrics (see total metrics information below)
+
+patron.patron-dashboard.form.label.patronage-averageChimpumByCurrency-sentence = Average budget by currency
+patron.patron-dashboard.form.label.patronage-deviationChimpumByCurrency-sentence = Deviation budget by currency
+patron.patron-dashboard.form.label.patronage-minChimpumByCurrency-sentence = Min budget by currency
+patron.patron-dashboard.form.label.patronage-maxChimpumByCurrency-sentence = Max budget by currency
 
 anonymous.user-account.form.label.username = Username:
 anonymous.user-account.form.label.password = Password:

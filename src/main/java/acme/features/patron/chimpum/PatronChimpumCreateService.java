@@ -32,10 +32,10 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		
 //		request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","item");
 		if(this.repository.allTools(true).isEmpty()) {			
-			request.bind(entity, errors, "code","title","description","creationMoment", "startDate","endDate","budget","link");
+			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link");
 		}else {
 			entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
-			request.bind(entity, errors, "code","title","description","creationMoment", "startDate","endDate","budget","link","itemId");
+			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","itemId");
 		}
 	}	
 
