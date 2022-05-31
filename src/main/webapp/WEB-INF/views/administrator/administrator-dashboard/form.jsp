@@ -108,7 +108,7 @@
 			<td style= "text-align:right;">
 				<acme:print value="${entry.value}"/>
 				
-			</td>		
+			</td>
 		</tr>
 		</jstl:forEach>
 	</table>
@@ -343,6 +343,103 @@
 					<acme:print value="${totalNumberOfTools}"/> 
 				</td>		
 			</tr>
+			<tr>	
+				<th id="">
+					<acme:message code="patron.patron-dashboard.form.label.ratioOfItemsWithChimpum"/>		
+				</th>
+				<td style= "text-align:right;">
+					<acme:print value="${ratioOfItemsWithChimpum}"/> 
+				</td>		
+			</tr>
 	</table>
+	<acme:message code="patron.patron-dashboard.form.label.chimpumsTitle"/>	
+	<jstl:if test="${empty averageChimpumByCurrency}">
+	<br>
+	<acme:message code="patron.patron-dashboard.form.label.nohayChimpums"/>
+		<br>
+		<br>
+	</jstl:if>	
+	<br>
+		
+	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
+	<table class="table table-sm">	
+		<caption></caption>
+		<jstl:forEach items="${averageChimpumByCurrency}" var="entry"> 	
+		<tr>	
+			<th id="">	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-averageChimpumByCurrency-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td style= "text-align:right;">
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>	
+	<table class="table table-sm">	
+		<caption></caption>
+		<jstl:forEach items="${deviationChimpumByCurrency}" var="entry"> 	
+		<tr>	
+			<th id="">	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-deviationChimpumByCurrency-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td style= "text-align:right;">
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>	
+	<table class="table table-sm">	
+		<caption></caption>
+		<jstl:forEach items="${maxChimpumByCurrency}" var="entry"> 	
+		<tr>	
+			<th id="">	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-maxChimpumByCurrency-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td style= "text-align:right;">
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>	
+	<table class="table table-sm">	
+		<caption></caption>
+		<jstl:forEach items="${minChimpumByCurrency}" var="entry"> 	
+		<tr>	
+			<th id="">	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-minChimpumByCurrency-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td style= "text-align:right;">
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>		
 		
 </acme:form>

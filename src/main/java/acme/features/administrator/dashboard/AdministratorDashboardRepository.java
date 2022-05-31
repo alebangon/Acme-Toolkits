@@ -46,6 +46,18 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.status")
 	List<String> maxBudgetByStatus();
 	//Map<String,Double> averageBudgetByStatus;
+	
+	@Query("select count(c) from Chimpum c")
+	int totalNumberOfChimpums();
 
+	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	List<String> averageChimpumByCurrency();
+	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	List<String> deviationChimpumByCurrency();
+	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	List<String> minChimpumByCurrency();
+	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	List<String> maxChimpumByCurrency();
+	
 	
 }

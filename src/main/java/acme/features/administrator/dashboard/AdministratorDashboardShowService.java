@@ -33,7 +33,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		int totalNumberOfAcceptedPatronages=this.repository.totalNumberOfAcceptedPatronages();
 		int totalNumberOfDeniedPatronages=this.repository.totalNumberOfDeniedPatronages();	
 		int totalNumberOfTools= this.repository.totalNumberOfTools();
-		int totalNumberOfComponents= this.repository.totalNumberOfComponents();
+		int totalNumberOfComponents= this.repository.totalNumberOfComponents();		
 		Map<Pair<String, String>, Double> averageRetailPriceOfComponents =  new HashMap<Pair<String, String>, Double>();	
 		Map<Pair<String, String>, Double> deviationRetailPriceOfComponents =  new HashMap<Pair<String, String>, Double>();		
 		Map<Pair<String, String>, Double> minRetailPriceOfComponents =  new HashMap<Pair<String, String>, Double>();		
@@ -46,6 +46,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Map<String,Double> deviationBudgetByStatus=new HashMap<String, Double>();
 		Map<String,Double> minBudgetByStatus=new HashMap<String, Double>();
 		Map<String,Double> maxBudgetByStatus=new HashMap<String, Double>();
+		Map<String,Double> averageChimpumByCurrency=new HashMap<String, Double>();;
+		Map<String,Double> deviationChimpumByCurrency=new HashMap<String, Double>();;
+		Map<String,Double> minChimpumByCurrency=new HashMap<String, Double>();;
+		Map<String,Double> maxChimpumByCurrency=new HashMap<String, Double>();;
+
+		int totalNumberOfChimpums= this.repository.totalNumberOfChimpums();
 
 		int i=0;
 		
@@ -169,6 +175,47 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			maxBudgetByStatus.put(status, key);
 			i++;
 		 }		
+		
+		//chimpums
+		
+		i=0;
+		while(i<this.repository.averageChimpumByCurrency().size()) {
+			String linea= this.repository.averageChimpumByCurrency().get(i);
+			String[] sub=linea.split(",");
+			Double key=Double.parseDouble(sub[1]);
+			String status=sub[0];
+			averageChimpumByCurrency.put(status, key);
+			i++;
+		 }		
+		i=0;
+		while(i<this.repository.deviationChimpumByCurrency().size()) {
+			String linea= this.repository.deviationChimpumByCurrency().get(i);
+			String[] sub=linea.split(",");
+			Double key=Double.parseDouble(sub[1]);
+			String status=sub[0];
+			deviationChimpumByCurrency.put(status, key);
+			i++;
+		 }	
+		i=0;
+		while(i<this.repository.minChimpumByCurrency().size()) {
+			String linea= this.repository.minChimpumByCurrency().get(i);
+			String[] sub=linea.split(",");
+			Double key=Double.parseDouble(sub[1]);
+			String status=sub[0];
+			minChimpumByCurrency.put(status, key);
+			i++;
+		 }	
+		i=0;
+		while(i<this.repository.maxChimpumByCurrency().size()) {
+			String linea= this.repository.maxChimpumByCurrency().get(i);
+			String[] sub=linea.split(",");
+			Double key=Double.parseDouble(sub[1]);
+			String status=sub[0];
+			maxChimpumByCurrency.put(status, key);
+			i++;
+		 }	
+		
+		
 		result.setTotalNumberOfAcceptedPatronages(totalNumberOfAcceptedPatronages);
 		result.setTotalNumberOfProposedPatronages(totalNumberOfProposedPatronages);
 		result.setTotalNumberOfDeniedPatronages(totalNumberOfDeniedPatronages);
@@ -190,8 +237,16 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaxBudgetByStatus(maxBudgetByStatus);
 		result.setMinBudgetByStatus(minBudgetByStatus);
 		
-		
-		
+		//chimpum
+		if(totalNumberOfTools==0) {
+			result.setRatioOfItemsWithChimpum(0.0);
+		}else {
+			result.setRatioOfItemsWithChimpum((totalNumberOfChimpums/totalNumberOfTools)*100);
+		}
+		result.setAverageChimpumByCurrency(averageChimpumByCurrency);
+		result.setDeviationChimpumByCurrency(deviationChimpumByCurrency);
+		result.setMaxChimpumByCurrency(maxChimpumByCurrency);
+		result.setMinChimpumByCurrency(minChimpumByCurrency);
 		
 		return result;
 	}
@@ -204,7 +259,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, "totalNumberOfProposedPatronages", "totalNumberOfAcceptedPatronages", "totalNumberOfDeniedPatronages", 
 			"totalNumberOfComponents", "averageRetailPriceOfComponents", "deviationRetailPriceOfComponents", "minRetailPriceOfComponents","maxRetailPriceOfComponents",
-			"totalNumberOfTools","averageRetailPriceOfTools","deviationRetailPriceOfTools","minRetailPriceOfTools","maxRetailPriceOfTools","averageBudgetByStatus","deviationBudgetByStatus","maxBudgetByStatus","minBudgetByStatus");
+			"totalNumberOfTools","averageRetailPriceOfTools","deviationRetailPriceOfTools","minRetailPriceOfTools","maxRetailPriceOfTools","averageBudgetByStatus","deviationBudgetByStatus","maxBudgetByStatus","minBudgetByStatus",
+			"ratioOfItemsWithChimpum","averageChimpumByCurrency","deviationChimpumByCurrency","maxChimpumByCurrency","minChimpumByCurrency");//Chimpum
 	}}
 
 

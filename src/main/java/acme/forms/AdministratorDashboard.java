@@ -35,5 +35,14 @@ public class AdministratorDashboard implements Serializable {
 		Map<String,Double> deviationBudgetByStatus;
 		Map<String,Double> minBudgetByStatus;
 		Map<String,Double> maxBudgetByStatus;
+		
+		
+		Map<String,Double> averageChimpumByCurrency;
+		Map<String,Double> deviationChimpumByCurrency;
+		Map<String,Double> minChimpumByCurrency;
+		Map<String,Double> maxChimpumByCurrency;
+		
+		double ratioOfItemsWithChimpum;
+
 }
 

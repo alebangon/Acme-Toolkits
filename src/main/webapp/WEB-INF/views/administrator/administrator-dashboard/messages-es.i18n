@@ -36,11 +36,19 @@ patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de pa
 patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de patrocinios rechazados:
 patron.patron-dashboard.form.label.totalNumberOfTools= Total de herramientas: 
 patron.patron-dashboard.form.label.totalNumberOfComponents= Total de compomentes: 
+patron.patron-dashboard.form.label.nohayChimpums =	 No hay chimpums para calcular métricas (mirar información sobre métricas totales debajo)
+patron.patron-dashboard.form.label.chimpumsTitle = CHIMPUMS
+patron.patron-dashboard.form.label.ratioOfItemsWithChimpum	= Ratio de items con Chimpuns
 
 patron.patron-dashboard.form.label.avg-title = Información de las medias.
 patron.patron-dashboard.form.label.deviationTitle= Información de las desviaciones típicas.
 patron.patron-dashboard.form.label.maxTitle= Información de los máximos.
 patron.patron-dashboard.form.label.minTitle= Información de los mínimos.
 patron.patron-dashboard.form.label.absoluteTitle = Métricas totales.
+patron.patron-dashboard.form.label.patronage-averageChimpumByCurrency-sentence =  Presupuesto medio del precio de venta por divisa.
+patron.patron-dashboard.form.label.patronage-deviationChimpumByCurrency-sentence = Desviación típica del precio de venta por divisa.
+patron.patron-dashboard.form.label.patronage-minChimpumByCurrency-sentence = Mínimo precio de venta por divisa.
+patron.patron-dashboard.form.label.patronage-maxChimpumByCurrency-sentence = Máximo precio de venta por divisa.
+
 
 
