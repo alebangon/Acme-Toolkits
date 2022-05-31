@@ -20,7 +20,9 @@
 	<acme:input-textbox code="patron.chimpum.form.label.code" path="code"/>
 	<acme:input-textbox code="patron.chimpum.form.label.title" path="title"/>
 	<acme:input-textarea code="patron.chimpum.form.label.description" path="description"/>
+	<jstl:if test="${command != 'create'}">	
 	<acme:input-moment code="patron.chimpum.form.label.creationMoment" path="creationMoment" readonly="true"/>
+	</jstl:if>
 	<acme:input-moment code="patron.chimpum.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="patron.chimpum.form.label.endDate" path="endDate" />
 	<acme:input-money code="patron.chimpum.form.label.budget" path="budget"/>
@@ -28,14 +30,14 @@
 		<jstl:if test="${command == 'create' or command == 'update'}">	
 	        <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId2 }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 ==item.getId() }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:if>	
 	<jstl:if test="${command == 'show'}">
-	 <acme:input-select code="patron.chimpum.form.label.item" path="item">
+	 <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
  		<jstl:forEach items="${items}" var="item">
-			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId2 }"/>
+			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 == item.getId() }"/>
 		</jstl:forEach>
 	</acme:input-select>
 	<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
