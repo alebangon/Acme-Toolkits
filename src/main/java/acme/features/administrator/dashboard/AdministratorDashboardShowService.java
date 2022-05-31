@@ -179,10 +179,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//chimpums
 		
 		i=0;
-		System.out.println("ayuda");
-		System.out.println(this.repository.averageChimpumByCurrency());
-		System.out.println(this.repository.averageChimpumByCurrency().get(0));
-
 		while(i<this.repository.averageChimpumByCurrency().size()) {
 			String linea= this.repository.averageChimpumByCurrency().get(i);
 			String[] sub=linea.split(",");
