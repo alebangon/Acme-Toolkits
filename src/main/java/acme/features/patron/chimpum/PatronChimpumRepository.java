@@ -33,4 +33,5 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	@Query("select sc from SystemConfiguration sc")
 	SystemConfiguration findSystemConfiguration();
 	
+	
 }

@@ -122,6 +122,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
+		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 		this.repository.save(entity);
 	}
 
