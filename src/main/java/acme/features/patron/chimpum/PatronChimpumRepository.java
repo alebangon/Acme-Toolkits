@@ -1,5 +1,6 @@
 package acme.features.patron.chimpum;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -35,6 +36,7 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	@Query("Select c from Chimpum c where c.patron.id = :id")
 	List<Chimpum> findAllChimpumsByPatronId(int id);
 	
-	
+	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL and i not in (select c.item from Chimpum c where c.item.id = i.id)")
+	Collection<Item> allToolsWithoutChimpun(boolean published);
 	
 }
