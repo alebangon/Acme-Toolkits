@@ -40,7 +40,7 @@ public class PatronChimpumDeleteTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/chimpum/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void negativePatronage(final int recordIndex, final String code, final String title, final String description, final String creation_moment, final String start_date, final String end_date, final String budget,
+	public void negativeChimpum(final int recordIndex, final String code, final String title, final String description, final String creation_moment, final String start_date, final String end_date, final String budget,
 		final String link, final String item_id, final String item_tipo, final String item_name,  final String item_code, final String item_technology, final String item_description, final String item_retailPrice, final String item_link) {
 		
 		super.sortListing(0, "asc");

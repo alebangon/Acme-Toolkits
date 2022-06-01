@@ -47,7 +47,7 @@ public class PatronPatronageCreateTest extends TestHarness{
 		super.clickOnMenu("Patron", "List patronages");
 
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(2+recordIndex);
+		super.clickOnListingRecord(recordIndex);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("startDate", this.formattedDateTimeStart);
 		super.checkInputBoxHasValue("endDate", this.formattedDateTimeEND);
