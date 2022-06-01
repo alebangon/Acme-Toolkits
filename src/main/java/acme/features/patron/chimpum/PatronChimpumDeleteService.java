@@ -28,7 +28,7 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 		int chimpunId = request.getModel().getInteger("id");
 		int patronId= request.getPrincipal().getActiveRoleId();
 		int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
-		if(patronBuscaId!=patronId) {
+		if(patronBuscaId!=patronId || this.repository.findChimpumById(chimpunId).getItem().isPublished()) {
 			result= false;
 		}
 
