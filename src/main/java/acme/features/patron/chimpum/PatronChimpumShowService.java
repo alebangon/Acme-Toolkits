@@ -22,7 +22,7 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		int chimpunId = request.getModel().getInteger("id");
 		int patronId= request.getPrincipal().getActiveRoleId();
 		int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
-		if(patronBuscaId!=patronId || this.repository.findChimpumById(chimpunId).getItem().isPublished()) {
+		if(patronBuscaId!=patronId ) {
 			result= false;
 		}
 
@@ -43,7 +43,7 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("items", this.repository.allToolsWithoutChimpun(true));
+		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
 		model.setAttribute("itemId", entity.getItem().getId());
 		model.setAttribute("itemPublished", entity.getItem().isPublished());
 

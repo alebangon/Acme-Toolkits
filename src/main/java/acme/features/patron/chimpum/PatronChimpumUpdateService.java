@@ -111,7 +111,7 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 		assert model != null; 
 
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
-		model.setAttribute("items", this.repository.allTools(true));
+		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
 		model.setAttribute("itemId",  entity.getItem().getId());
 	}
 
