@@ -23,7 +23,7 @@ public class InventorChimpumDeleteService  implements AbstractDeleteService<Inve
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
-		boolean result;
+		boolean result=true;
 		int chimpumID;
 		Inventor inv;
 		Chimpum chimpum;
@@ -31,10 +31,13 @@ public class InventorChimpumDeleteService  implements AbstractDeleteService<Inve
 		chimpumID = request.getModel().getInteger("id");
 		chimpum = this.repository.findChimpumById(chimpumID);
 		inv =this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId());
-		result = chimpum.getItem().getInventor().equals(inv);
-
-		return result; 
+		if(!chimpum.getItem().getInventor().equals(inv)||this.repository.findChimpumById(chimpumID).getItem().isPublished()) {
+		result = false;
 	}
+
+		return result;
+	}
+
 
 	@Override
 	public Chimpum findOne(final Request<Chimpum> request) {

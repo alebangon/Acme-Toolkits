@@ -32,3 +32,5 @@ item-30,COMPONENT,Component brazo,Technology2,Es el brazo del rex y usa tecnolog
 item-31,COMPONENT,Component cola,Technology3,Es la cola del rex y usa tecnology 3,"USD 10,000",true,https://www.tododinosaurios.com/,REX-004-C,inventor-02
 item-32,COMPONENT,Component pierna,Technology2,Es la pierna del rex y usa tecnology 2,GBP 6500.73,true,https://www.tododinosaurios.com/,REX-005-P,inventor-02
 item-33,COMPONENT,Component diente,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,true,https://www.tododinosaurios.com/,REX-006-D,inventor-02
+item-35,TOOL,Tool diente,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,false,https://www.tododinosaurios.com/,REX-007-A,inventor-01
+item-34,TOOL,Tool BOCA,Technology2,Es el diente del rex y usa tecnology 2,GBP 249.95,false,https://www.tododinosaurios.com/,REX-008-A,inventor-01
