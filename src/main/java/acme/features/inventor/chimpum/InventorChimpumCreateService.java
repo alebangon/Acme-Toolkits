@@ -49,7 +49,6 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert entity != null; 
 		assert model != null; 
 		Collection<Item> items;
-		System.out.println(request.getPrincipal().getActiveRoleId());
 		items = this.repository.allToolsByInventorId(false, request.getPrincipal().getActiveRoleId());
 
 			
@@ -81,6 +80,9 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
+		if(entity.getItem()==null) {
+		        errors.state(request, entity.getItem() != null, "itemId", "inventor.chimpum.form.error.noItem");
+		    }
 		if (!errors.hasErrors("code")) {
 			Chimpum existing;
 			

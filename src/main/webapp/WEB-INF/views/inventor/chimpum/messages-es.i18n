@@ -7,33 +7,33 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
-patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
+inventor.patronage.form.error.noInventor = Por favor, seleccione un inventor
 
-patron.chimpum.list.label.code = Código
-patron.chimpum.list.label.title = Título
-patron.chimpum.list.label.budget = Presupuesto
-patron.chimpum.list.label.start_date = Fecha De Inicio
-patron.chimpum.list.label.end_date = Fecha De Inicio
-patron.chimpum.list.label.creationMoment = Momento De Creación
+inventor.chimpum.list.label.code = Código
+inventor.chimpum.list.label.title = Título
+inventor.chimpum.list.label.budget = Presupuesto
+inventor.chimpum.list.label.start_date = Fecha De Inicio
+inventor.chimpum.list.label.end_date = Fecha De Inicio
+inventor.chimpum.list.label.creationMoment = Momento De Creación
 
-patron.chimpum.form.label.code = Código
-patron.chimpum.form.label.title = Título
-patron.chimpum.form.label.description = Descripción
-patron.chimpum.form.label.creationMoment = Momento De Creación
-patron.chimpum.form.label.startDate = Fecha De Inicio
-patron.chimpum.form.label.endDate = Fecha De Fin
-patron.chimpum.form.label.budget = Presupuesto
-patron.chimpum.form.label.link = Enlace
-patron.chimpum.form.label.item = Item
+inventor.chimpum.form.label.code = Código
+inventor.chimpum.form.label.title = Título
+inventor.chimpum.form.label.description = Descripción
+inventor.chimpum.form.label.creationMoment = Momento De Creación
+inventor.chimpum.form.label.startDate = Fecha De Inicio
+inventor.chimpum.form.label.endDate = Fecha De Fin
+inventor.chimpum.form.label.budget = Presupuesto
+inventor.chimpum.form.label.link = Enlace
+inventor.chimpum.form.label.item = Item
 
-patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
-patron.patronage.form.error.duplicated = Código duplicado
-patron.patronage.form.error.negative-budget= Cantidad negativa
-patron.patronage.form.error.too-close-start-date = Fecha de inicio muy cercana(1 mes después mínmo)
-patron.patronage.form.error.one-month = Una semana mínimo entre fechas
-patron.chimpum.form.error.noInventor = Por favor seleccione una tool
+inventor.patronage.form.error.non-accepted-currency= Divisa no aceptada
+inventor.patronage.form.error.duplicated = Código duplicado
+inventor.patronage.form.error.negative-budget= Cantidad negativa
+inventor.patronage.form.error.too-close-start-date = Fecha de inicio muy cercana(1 mes después mínmo)
+inventor.patronage.form.error.one-month = Una semana mínimo entre fechas
+inventor.chimpum.form.error.noInventor = Por favor seleccione una tool
 
-patron.chimpum.form.button.update = Actualizar
-patron.chimpum.form.button.delete = Eliminar
-patron.chimpum.form.button.create = Crear
-patron.chimpum.list.button.create-chimpum = Crear Un Chimpum
+inventor.chimpum.form.button.update = Actualizar
+inventor.chimpum.form.button.delete = Eliminar
+inventor.chimpum.form.button.create = Crear
+inventor.chimpum.list.button.create-chimpum = Crear Un Chimpum
