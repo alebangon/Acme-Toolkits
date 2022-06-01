@@ -54,7 +54,11 @@
 		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
 			
 			<acme:submit code="patron.chimpum.form.button.update" action="/patron/chimpum/update"/> 
+			<jstl:if test="${item.published==false}" >
+
 			<acme:submit code="patron.chimpum.form.button.delete" action="/patron/chimpum/delete"/>
+			
+			</jstl:if>
 			                                                                                             
 		</jstl:when>
 		
