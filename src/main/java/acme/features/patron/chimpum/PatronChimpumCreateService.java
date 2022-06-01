@@ -37,7 +37,6 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 			entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","itemId");
 		}
-		System.out.println("bind"+this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 	}	
 	
