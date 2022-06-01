@@ -62,6 +62,7 @@ public class PatronChimpumDeleteService  implements AbstractDeleteService<Patron
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		model.setAttribute("itemPublished", entity.getItem().isPublished());
 
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 	}
