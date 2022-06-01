@@ -58,6 +58,7 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		if(entity.getItem().isPublished()) {
 			model.setAttribute("readonly", true);
 		}
+		model.setAttribute("itemPublished", entity.getItem().isPublished());
 
 	}
 

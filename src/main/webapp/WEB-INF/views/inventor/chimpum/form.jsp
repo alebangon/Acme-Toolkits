@@ -38,14 +38,14 @@
 	</jstl:choose>
 		
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, update, delete') && item.published == false}">
-			<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
-			<acme:input-textbox code="inventor.item.form.label.name" path="item.name" readonly="true"/>
-			<acme:input-textbox code="inventor.item.form.label.code" path="item.code" readonly="true"/>
-			<acme:input-textbox code="inventor.item.form.label.technology" path="item.technology" readonly="true"/>
-			<acme:input-textarea code="inventor.item.form.label.description" path="item.description" readonly="true"/>
-			<acme:input-money code="inventor.item.form.label.retail-price" path="item.retailPrice" readonly="true"/>
-			<acme:input-textbox code="inventor.item.form.label.optional-link" path="item.optionalLink" readonly="true"/>
+		<jstl:when test="${acme:anyOf(command,'show, update, delete') && itemPublished == false}">
+			<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo"/>
+			<acme:input-textbox code="inventor.item.form.label.name" path="item.name"/>
+			<acme:input-textbox code="inventor.item.form.label.code" path="item.code"/>
+			<acme:input-textbox code="inventor.item.form.label.technology" path="item.technology"/>
+			<acme:input-textarea code="inventor.item.form.label.description" path="item.description"/>
+			<acme:input-money code="inventor.item.form.label.retail-price" path="item.retailPrice"/>
+			<acme:input-textbox code="inventor.item.form.label.optional-link" path="item.optionalLink"/>
 		</jstl:when>
 		
 	</jstl:choose>	
@@ -53,7 +53,7 @@
 
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, update, delete') && item.published == false}">
+		<jstl:when test="${acme:anyOf(command,'show, update, delete') && itemPublished == false}">
 				<acme:submit code="patron.chimpum.form.button.update" action="/inventor/chimpum/update"/> 
 				<acme:submit code="patron.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
 
