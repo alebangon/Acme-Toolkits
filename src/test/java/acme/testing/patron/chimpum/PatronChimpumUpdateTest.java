@@ -32,7 +32,7 @@ public class PatronChimpumUpdateTest extends TestHarness{
 		super.clickOnMenu("Patron", "List My Chimpums");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(0);
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
@@ -71,7 +71,7 @@ public class PatronChimpumUpdateTest extends TestHarness{
 		super.clickOnMenu("Patron", "List My Chimpums");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(0);
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);

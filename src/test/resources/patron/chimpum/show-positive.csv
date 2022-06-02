@@ -1,4 +1,4 @@
 recordIndex,code,title,description,creation_moment,start_date,end_date,budget,link,item_id,item_tipo,item_name,item_code,item_technology,item_description,item_retailPrice,item_link
-0,AAA-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,EUR 200.00,,1,TOOL,Vapormax,AAA-123-F,Technology1,This are the new Nike Vapormax it will provide you more speed,USD 45.30,
-1,BBB-124,chimpum3,description for chimpum3,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,TOOL,Tool 4,ABE-187,Technology1,This is the tool 4 and uses the tecnology 1,USD 20.10,
-2,BBB-125,chimpum4,description for chimpum3,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,TOOL,Tool 3,ABD-999,Technology3,This is the tool 3 and uses the tecnology 3,EUR 0.01,
+0,AAA-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,EUR 200.00,,1,TOOL,Tools piernas,REX-008-D,Technology2,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
+1,BBB-124,chimpum3,description for chimpum3,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,TOOL,Tools brazos,REX-009-A,Technology1,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
+2,BBB-125,chimpum4,description for chimpum4,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,TOOL,Tools diente,REX-007-D,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
