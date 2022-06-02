@@ -15,7 +15,10 @@ inventor.chimpum.list.label.budget = Budget
 inventor.chimpum.list.label.start_date = Start Date
 inventor.chimpum.list.label.end_date = End Date
 inventor.chimpum.list.label.creationMoment = Creation Moment
-
+patron.chimpum.form.error.too-close-start-date = Too close start date from today(at least one month)
+patron.chimpum.form.error.negative-budget = The budget is negative
+patron.chimpum.form.error.duplicated = Duplicated Code
+patron.chimpum.form.error.one-month= Date has to be one month on the future 
 inventor.chimpum.form.label.code = Code
 inventor.chimpum.form.label.title = Title
 inventor.chimpum.form.label.description = Description
