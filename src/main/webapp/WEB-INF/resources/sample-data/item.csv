@@ -32,12 +32,14 @@ item-30,COMPONENT,Component brazo,Technology2,Es el brazo del rex y usa tecnolog
 item-31,COMPONENT,Component cola,Technology3,Es la cola del rex y usa tecnology 3,"USD 10,000",true,https://www.tododinosaurios.com/,REX-004-C,inventor-02
 item-32,COMPONENT,Component pierna,Technology2,Es la pierna del rex y usa tecnology 2,GBP 6500.73,true,https://www.tododinosaurios.com/,REX-005-P,inventor-02
 item-33,COMPONENT,Component diente,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,true,https://www.tododinosaurios.com/,REX-006-D,inventor-02
-item-35,TOOL,Tool diente,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,false,https://www.tododinosaurios.com/,REX-007-A,inventor-01
-item-34,TOOL,Tool BOCA,Technology2,Es el diente del rex y usa tecnology 2,GBP 249.95,false,https://www.tododinosaurios.com/,REX-008-A,inventor-01
-item-36,TOOL,Tool 36,Technology2,This a tool and uses the tecnology 2,GBP 300.30,false,null,TOL-999,inventor-05
-item-37,TOOL,Tool 37,Technology2,This a tool and uses the tecnology 2,EUR 300.30,false,null,TOL-888,inventor-05
-item-38,TOOL,Tool 38,Technology2,This a tool and uses the tecnology 2,USD 500.51,false,null,TOL-777,inventor-05
-item-39,TOOL,Tool 39,Technology2,This a tool and uses the tecnology 2,EUR 10.12,false,null,TOL-555,inventor-05
-item-40,TOOL,Tool 40,Technology2,This a tool and uses the tecnology 2,GBP 33.33,false,null,TOL-111,inventor-05
-item-41,TOOL,Tool 41,Technology2,Tool de inventor5,USD 500.51,false,null,ARR-111,inventor-05
-item-42,TOOL,Tool 42,Technology2,Tool de inventor5,EUR 100.10,true,null,ARR-222,inventor-05
+item-34,TOOL,Tool diente,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,false,https://www.tododinosaurios.com/,REX-007-A,inventor-01
+item-35,TOOL,Tool diente2,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,false,https://www.tododinosaurios.com/,REX-007-B,inventor-01
+item-36,TOOL,Tool BOCA,Technology2,Es el diente del rex y usa tecnology 2,GBP 249.95,false,https://www.tododinosaurios.com/,REX-008-A,inventor-01
+item-37,TOOL,Tool diente3,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,false,https://www.tododinosaurios.com/,REX-007-C,inventor-01
+item-38,TOOL,Tool 36,Technology2,This a tool and uses the tecnology 2,GBP 300.30,false,null,TOL-999,inventor-05
+item-39,TOOL,Tool 37,Technology2,This a tool and uses the tecnology 2,EUR 300.30,false,null,TOL-888,inventor-05
+item-40,TOOL,Tool 38,Technology2,This a tool and uses the tecnology 2,USD 500.51,false,null,TOL-777,inventor-05
+item-41,TOOL,Tool 39,Technology2,This a tool and uses the tecnology 2,EUR 10.12,false,null,TOL-555,inventor-05
+item-42,TOOL,Tool 40,Technology2,This a tool and uses the tecnology 2,GBP 33.33,false,null,TOL-111,inventor-05
+item-43,TOOL,Tool 41,Technology2,Tool de inventor5,USD 500.51,false,null,ARR-111,inventor-05
+item-44,TOOL,Tool 42,Technology2,Tool de inventor5,EUR 100.10,true,null,ARR-222,inventor-05
