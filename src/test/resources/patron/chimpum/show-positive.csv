@@ -1,4 +1,4 @@
 recordIndex,code,title,description,creation_moment,start_date,end_date,budget,link,item_id,item_tipo,item_name,item_code,item_technology,item_description,item_retailPrice,item_link
-0,AAA-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,EUR 200.00,,1,COMPONENT,COMPONENT piernas,REX-008-D,Technology2,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
+0,AAA-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,EUR 200.00,,1,COMPONENT,COMPONENT brazos5,REX-059-A,Technology1,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
 1,BBB-124,chimpum3,description for chimpum3,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,COMPONENT,COMPONENT ojos,REX-012-A,Technology1,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/
 2,BBB-125,chimpum4,description for chimpum4,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 200.00,,1,COMPONENT,COMPONENT lenguas,REX-011-A,Technology1,rex y usa tecnology 2,EUR 249.95,https://www.tododinosaurios.com/

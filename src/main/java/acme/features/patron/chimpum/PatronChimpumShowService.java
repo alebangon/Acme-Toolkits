@@ -46,11 +46,11 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		final Collection<Item> items = this.repository.allComponentsWithoutChimpum(false);
+		final Collection<Item> items = this.repository.allComponentsWithoutChimpum(true);
         items.add(entity.getItem());
 		model.setAttribute("items", items);
 		model.setAttribute("itemId", entity.getItem().getId());
-		model.setAttribute("itemPublished", entity.getItem().isPublished());
+		model.setAttribute("itemPublished",entity.getItem().isPublished());
 
 		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 	

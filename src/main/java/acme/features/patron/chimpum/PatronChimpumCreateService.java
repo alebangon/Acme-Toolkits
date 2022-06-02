@@ -49,7 +49,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		assert model != null; 
 
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");
-		model.setAttribute("items", this.repository.allComponentsWithoutChimpum(false));
+		model.setAttribute("items", this.repository.allComponentsWithoutChimpum(true));
 		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 	}
