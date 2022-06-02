@@ -31,7 +31,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		assert errors != null;
 		
 //		request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","item");
-		if(this.repository.allToolsWithoutChimpum(false).isEmpty()) {			
+		if(this.repository.allToolsWithoutChimpum(true).isEmpty()) {			
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link");
 		}else {
 			entity.setItem(this.repository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
@@ -49,7 +49,7 @@ public class PatronChimpumCreateService  implements AbstractCreateService<Patron
 		assert model != null; 
 
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");
-		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
+		model.setAttribute("items", this.repository.allToolsWithoutChimpum(true));
 		entity.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 	}

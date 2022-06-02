@@ -29,7 +29,7 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 		final int chimpunId = request.getModel().getInteger("id");
 		final int patronId= request.getPrincipal().getActiveRoleId();
 		final int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
-		if(patronBuscaId!=patronId || this.repository.findChimpumById(chimpunId).getItem().isPublished()) {
+		if(patronBuscaId!=patronId || !this.repository.findChimpumById(chimpunId).getItem().isPublished()) {
 			result= false;
 		}
 
@@ -113,7 +113,7 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 		assert model != null; 
 
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
-		final Collection<Item> items = this.repository.allToolsWithoutChimpum(false);
+		final Collection<Item> items = this.repository.allToolsWithoutChimpum(true);
 		items.add(entity.getItem());
 		model.setAttribute("items",items);
 		model.setAttribute("itemId",  entity.getItem().getId());

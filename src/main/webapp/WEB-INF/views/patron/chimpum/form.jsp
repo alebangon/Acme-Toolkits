@@ -28,7 +28,7 @@
 	<acme:input-money code="patron.chimpum.form.label.budget" path="budget"/>
 	<acme:input-url code="patron.chimpum.form.label.link" path="link"/>
 	<jstl:choose>
-		<jstl:when test="${(acme:anyOf(command,'show, update, delete') &&  itemPublished == false) || command=='create'}">
+		<jstl:when test="${(acme:anyOf(command,'show, update, delete') &&  itemPublished == true) || command=='create'}">
 	        <acme:input-select code="inventor.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
 					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId ==item.getId() }"/>
@@ -52,10 +52,10 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
-			<jstl:if test="${itemPublished == false}" >
+			<jstl:if test="${itemPublished == true}" >
 			<acme:submit code="patron.chimpum.form.button.update" action="/patron/chimpum/update"/> 
 			</jstl:if>
-			<jstl:if test="${itemPublished == false}" >
+			<jstl:if test="${itemPublished == true}" >
 
 			<acme:submit code="patron.chimpum.form.button.delete" action="/patron/chimpum/delete"/>
 			
