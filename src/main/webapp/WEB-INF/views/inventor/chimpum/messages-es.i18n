@@ -15,7 +15,10 @@ inventor.chimpum.list.label.budget = Presupuesto
 inventor.chimpum.list.label.start_date = Fecha De Inicio
 inventor.chimpum.list.label.end_date = Fecha De Inicio
 inventor.chimpum.list.label.creationMoment = Momento De Creación
-
+patron.chimpum.form.error.too-close-start-date = Fecha de inicio muy cercana(mínimo un mes)
+patron.chimpum.form.error.negative-budget = Ha insertado una cantidad negativa
+patron.chimpum.form.error.duplicated = Código duplicado
+patron.chimpum.form.error.one-month= Tiene que ser un mes posterior a la fecha de inicio 
 inventor.chimpum.form.label.code = Código
 inventor.chimpum.form.label.title = Título
 inventor.chimpum.form.label.description = Descripción
