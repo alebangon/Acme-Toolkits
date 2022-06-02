@@ -1,0 +1,3 @@
+recordIndex,code,title,description,creation_moment,start_date,end_date,budget,link,item_id,item_tipo,item_name,item_code,item_technology,item_description,item_retailPrice,item_link
+1,BBB-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,USD 100.00,,1,TOOL,Tool diente,REX-007-A,Technology2,Es el diente del rex y usa tecnology 2,USD 249.95,https://www.tododinosaurios.com/
+2,CCC-123,chimpum1,description for chimpum1,2022/03/18 10:15,2124/03/18 10:15,2125/03/18 10:15,GBP 50.00,,1,TOOL,Tool BOCA,REX-008-A,Technology2,Es el diente del rex y usa tecnology 2,GBP 249.95,https://www.tododinosaurios.com/
