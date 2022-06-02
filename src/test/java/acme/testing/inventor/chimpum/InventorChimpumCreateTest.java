@@ -66,7 +66,7 @@ public class InventorChimpumCreateTest extends TestHarness{
 		final String budget,final String link, final String itemId) {
 		
 		
-		super.signIn("inventor5", "inventor5");
+		super.signIn("inventor1", "inventor1");
 		//list
 		super.clickOnMenu("Inventor", "List My Chimpums");
 		super.checkListingExists();

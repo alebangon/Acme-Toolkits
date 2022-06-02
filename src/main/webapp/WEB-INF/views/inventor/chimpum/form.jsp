@@ -38,7 +38,7 @@
 	</jstl:choose>
 		
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, update, delete') && itemPublished == false}">
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
 			<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
 			<acme:input-textbox code="inventor.item.form.label.name" path="item.name" readonly="true"/>
 			<acme:input-textbox code="inventor.item.form.label.code" path="item.code" readonly="true"/>
@@ -53,7 +53,7 @@
 
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')  && itemPublished == false}">
 				<acme:submit code="inventor.chimpum.form.button.update" action="/inventor/chimpum/update"/> 
 				<acme:submit code="inventor.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
 
