@@ -2,10 +2,10 @@ recordIndex,code,title,description,budget,link,item_id
 0,AAA-123,valid title,description for chimpum5,EUR 23.00,,1
 1,AA-115,chimpum9,description for chimpum9,USD 17.25,,1
 2,,chimpum9,description for chimpum9,USD 17.25,,1
-4,AAA-118,TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleT,description for chimpum12,USD 17.25,,1
-5,AAA-111,,description for chimpum5,EUR 23.00,,1
-6,AAA-112,chimpum6,,GBP 250.00,,1
-7,AAA-117,chimpum11,"Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,.",USD 17.25,,1
-8,AAA-114,chimpum8,description for chimpum8,USR 17.25,,1
-9,AAA-116,chimpum10,description for chimpum10,USD -17.25,,1
-10,AAA-116,chimpum10,description for chimpum10,USD 17.25,a,1
+3,AAA-118,TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleT,description for chimpum12,USD 17.25,,1
+4,AAA-111,,description for chimpum5,EUR 23.00,,1
+5,AAA-112,chimpum6,,GBP 250.00,,1
+6,AAA-117,chimpum11,"Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,.",USD 17.25,,1
+7,AAA-114,chimpum8,description for chimpum8,USR 17.25,,1
+8,AAA-116,chimpum10,description for chimpum10,USD -17.25,,1
+9,AAA-116,chimpum10,description for chimpum10,USD 17.25,a,1

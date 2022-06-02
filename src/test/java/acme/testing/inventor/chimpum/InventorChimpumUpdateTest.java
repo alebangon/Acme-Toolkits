@@ -70,8 +70,7 @@ public class InventorChimpumUpdateTest extends TestHarness{
 		//list
 		super.clickOnMenu("Inventor", "List My Chimpums");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(0);
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
