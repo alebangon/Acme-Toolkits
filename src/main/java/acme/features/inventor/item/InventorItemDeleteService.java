@@ -88,6 +88,7 @@ public class InventorItemDeleteService implements AbstractDeleteService<Inventor
 			this.repository.delete(q);
 		}
 		
+		this.repository.delete(this.repository.findChimpumByItemId(entity.getId()));
 		
 		this.repository.delete(entity);
 	}
