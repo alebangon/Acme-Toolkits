@@ -31,7 +31,7 @@
 		<jstl:when test="${(acme:anyOf(command,'show, update, delete') &&  itemPublished == false) || command=='create'}">
 	        <acme:input-select code="inventor.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 ==item.getId() }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId ==item.getId() }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:when>
@@ -53,7 +53,7 @@
 
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, update, delete') && itemPublished == false}">
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
 				<acme:submit code="inventor.chimpum.form.button.update" action="/inventor/chimpum/update"/> 
 				<acme:submit code="inventor.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
 

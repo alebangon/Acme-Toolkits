@@ -54,7 +54,7 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		items.add(entity.getItem());
 		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink","item.published");
 		model.setAttribute("items",items);
-		model.setAttribute("itemId2", entity.getItem().getId());
+		model.setAttribute("itemId", entity.getItem().getId());
 		if(entity.getItem().isPublished()) {
 			model.setAttribute("readonly", true);
 		}
