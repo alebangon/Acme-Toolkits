@@ -32,7 +32,7 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert entity != null;
 		assert errors != null;
 		Collection<Item> items;
-		items = this.repository.allToolsByInventorId(false, request.getPrincipal().getActiveRoleId());
+		items = this.repository.allComponentsByInventorId(false, request.getPrincipal().getActiveRoleId());
 //		request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link","item");
 		if(items.isEmpty()) {			
 			request.bind(entity, errors, "code","title","description", "startDate","endDate","budget","link");
@@ -49,7 +49,7 @@ public class InventorChimpumCreateService  implements AbstractCreateService<Inve
 		assert entity != null; 
 		assert model != null; 
 		Collection<Item> items;
-		items = this.repository.allToolsByInventorId(false, request.getPrincipal().getActiveRoleId());
+		items = this.repository.allComponentsByInventorId(false, request.getPrincipal().getActiveRoleId());
 
 			
 		request.unbind(entity, model, "code","title","description", "startDate","endDate","budget","link");

@@ -49,7 +49,7 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 		final Collection<Item> items;
-		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+		items = this.repository.allComponentsByInventorId(false, entity.getItem().getInventor().getId());
 
 		items.add(entity.getItem());
 		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink","item.published");

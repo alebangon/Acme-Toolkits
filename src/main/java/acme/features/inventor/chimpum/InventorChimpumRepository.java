@@ -25,8 +25,8 @@ public interface InventorChimpumRepository extends AbstractRepository{
 	@Query("Select c from Chimpum c where c.code = :code")
 	Chimpum findChimpumByCode(String code);
 	
-	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL and i.inventor.id = :id and i not in (select c.item from Chimpum c where c.item.id = i.id)")
-	Collection<Item> allToolsByInventorId(boolean published, int id);
+	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.COMPONENT and i.inventor.id = :id and i not in (select c.item from Chimpum c where c.item.id = i.id)")
+	Collection<Item> allComponentsByInventorId(boolean published, int id);
 //	@Query("Select c.item from Chimpum c where c.item.published = :published and c.item.tipo = acme.entities.TipoDeItem.TOOL and c.item.inventor.id = :id")
 //	List<Item> allToolsWithChimpumByInventorId(Boolean published, int id);
 	

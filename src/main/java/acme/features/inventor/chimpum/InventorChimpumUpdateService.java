@@ -116,7 +116,7 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		assert entity != null; 
 		assert model != null; 
 		final Collection<Item> items;
-		items = this.repository.allToolsByInventorId(false, entity.getItem().getInventor().getId());
+		items = this.repository.allComponentsByInventorId(false, entity.getItem().getInventor().getId());
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 		model.setAttribute("items", items);
 		model.setAttribute("itemId",  entity.getItem().getId());
