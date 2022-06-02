@@ -21,7 +21,7 @@ public class PatronChimpumUpdateTest extends TestHarness{
     
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/chimpum/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/patron/chimpum/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
 	public void positiveChimpum(final int recordIndex, final String code, final String title, final String description, 
 		final String budget,final String link, final String itemId) {
@@ -60,7 +60,7 @@ public class PatronChimpumUpdateTest extends TestHarness{
 		super.signOut();
 	}
 	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/chimpum/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/patron/chimpum/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
 	public void negativeChimpum(final int recordIndex, final String code, final String title, final String description, 
 		final String budget,final String link, final String itemId) {
