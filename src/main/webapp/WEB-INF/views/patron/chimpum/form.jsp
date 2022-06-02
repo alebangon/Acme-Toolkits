@@ -1,5 +1,4 @@
-<%--
-- form.jsp
+<%-- form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
 -
@@ -9,6 +8,7 @@
 - purposes.  The copyright owner does not offer any warranties or representations, nor do
 - they accept any liabilities with respect to them.
 --%>
+
 
 <%@page language="java"%>
 
@@ -30,14 +30,14 @@
 		<jstl:if test="${command == 'create' or command == 'update'}">	
 	        <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 ==item.getId() }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId ==item.getId() }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:if>	
 	<jstl:if test="${command == 'show'}">
 	 <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
  		<jstl:forEach items="${items}" var="item">
-			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 == item.getId() }"/>
+			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId == item.getId() }"/>
 		</jstl:forEach>
 	</acme:input-select>
 	<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>

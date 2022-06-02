@@ -50,13 +50,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(c) from Chimpum c")
 	int totalNumberOfChimpums();
 
-	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.COMPONENT group by c.budget.currency")
 	List<String> averageChimpumByCurrency();
-	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.COMPONENT group by c.budget.currency")
 	List<String> deviationChimpumByCurrency();
-	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.COMPONENT group by c.budget.currency")
 	List<String> minChimpumByCurrency();
-	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.TOOL group by c.budget.currency")
+	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c where c.item.tipo=acme.entities.TipoDeItem.COMPONENT group by c.budget.currency")
 	List<String> maxChimpumByCurrency();
 	
 	

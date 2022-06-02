@@ -33,9 +33,10 @@ item-31,COMPONENT,Component cola,Technology3,Es la cola del rex y usa tecnology 
 item-32,COMPONENT,Component pierna,Technology2,Es la pierna del rex y usa tecnology 2,GBP 6500.73,true,https://www.tododinosaurios.com/,REX-005-P,inventor-02
 item-33,TOOL,Tool diente,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-006-D,inventor-02
 item-34,TOOL,Tools diente,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-007-D,inventor-02
-item-35,TOOL,Tools piernas,Technology2,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-008-D,inventor-01
-item-36,TOOL,Tools brazos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-009-A,inventor-01
-item-37,TOOL,Tools dedos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-010-A,inventor-01
-item-38,TOOL,Tools lenguas,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-011-A,inventor-01
-item-39,TOOL,Tools ojos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-012-A,inventor-01
-item-40,TOOL,Tools pies,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-013-A,inventor-01
+item-35,COMPONENT,COMPONENT piernas,Technology2,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-008-D,inventor-01
+item-36,COMPONENT,COMPONENT brazos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-009-A,inventor-01
+item-37,COMPONENT,COMPONENT dedos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-010-A,inventor-01
+item-38,COMPONENT,COMPONENT lenguas,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-011-A,inventor-01
+item-39,COMPONENT,COMPONENT ojos,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-012-A,inventor-01
+item-40,COMPONENT,COMPONENT pies,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-013-A,inventor-01
+item-41,COMPONENT,COMPONENT RODILLAS,Technology1,rex y usa tecnology 2,EUR 249.95,false,https://www.tododinosaurios.com/,REX-014-A,inventor-01

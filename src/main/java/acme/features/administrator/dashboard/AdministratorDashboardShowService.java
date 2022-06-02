@@ -238,10 +238,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinBudgetByStatus(minBudgetByStatus);
 		
 		//chimpum
-		if(totalNumberOfTools==0) {
+		if(totalNumberOfComponents==0) {
 			result.setRatioOfItemsWithChimpum(0.0);
 		}else {
-			result.setRatioOfItemsWithChimpum((totalNumberOfChimpums/totalNumberOfTools)*100);
+			result.setRatioOfItemsWithChimpum((totalNumberOfChimpums/totalNumberOfComponents)*100);
 		}
 		result.setAverageChimpumByCurrency(averageChimpumByCurrency);
 		result.setDeviationChimpumByCurrency(deviationChimpumByCurrency);

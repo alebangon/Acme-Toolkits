@@ -1,9 +1,12 @@
 package acme.features.patron.chimpum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chimpum;
+import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -43,7 +46,9 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
+		final Collection<Item> items = this.repository.allComponentsWithoutChimpum(false);
+        items.add(entity.getItem());
+		model.setAttribute("items", items);
 		model.setAttribute("itemId", entity.getItem().getId());
 		model.setAttribute("itemPublished", entity.getItem().isPublished());
 

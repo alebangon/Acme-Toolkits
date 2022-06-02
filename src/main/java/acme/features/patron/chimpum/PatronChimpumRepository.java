@@ -36,7 +36,7 @@ public interface PatronChimpumRepository extends AbstractRepository{
 	@Query("Select c from Chimpum c where c.patron.id = :id")
 	List<Chimpum> findAllChimpumsByPatronId(int id);
 	
-	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.TOOL and i not in (select c.item from Chimpum c where c.item.id = i.id)")
-	Collection<Item> allToolsWithoutChimpum(boolean published);
+	@Query("Select i from Item i where i.published = :published and i.tipo = acme.entities.TipoDeItem.COMPONENT and i not in (select c.item from Chimpum c where c.item.id = i.id)")
+	Collection<Item> allComponentsWithoutChimpum(boolean published);
 	
 }
