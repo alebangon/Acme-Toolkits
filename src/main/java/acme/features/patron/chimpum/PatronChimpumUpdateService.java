@@ -1,5 +1,6 @@
 package acme.features.patron.chimpum;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateUtils;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chimpum;
+import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -24,9 +26,9 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 		boolean result=true;
-		int chimpunId = request.getModel().getInteger("id");
-		int patronId= request.getPrincipal().getActiveRoleId();
-		int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
+		final int chimpunId = request.getModel().getInteger("id");
+		final int patronId= request.getPrincipal().getActiveRoleId();
+		final int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
 		if(patronBuscaId!=patronId || this.repository.findChimpumById(chimpunId).getItem().isPublished()) {
 			result= false;
 		}
@@ -111,8 +113,11 @@ public class PatronChimpumUpdateService implements AbstractUpdateService<Patron,
 		assert model != null; 
 
 		request.unbind(entity, model, "code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
-		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
+		final Collection<Item> items = this.repository.allToolsWithoutChimpum(false);
+		items.add(entity.getItem());
+		model.setAttribute("items",items);
 		model.setAttribute("itemId",  entity.getItem().getId());
+		model.setAttribute("itemPublished", entity.getItem().isPublished());
 	}
 
 	@Override

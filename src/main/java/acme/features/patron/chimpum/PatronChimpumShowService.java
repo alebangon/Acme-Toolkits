@@ -1,9 +1,12 @@
 package acme.features.patron.chimpum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chimpum;
+import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -19,9 +22,9 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 		boolean result=true;
-		int chimpunId = request.getModel().getInteger("id");
-		int patronId= request.getPrincipal().getActiveRoleId();
-		int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
+		final int chimpunId = request.getModel().getInteger("id");
+		final int patronId= request.getPrincipal().getActiveRoleId();
+		final int patronBuscaId=this.repository.findChimpumById(chimpunId).getPatron().getId();
 		if(patronBuscaId!=patronId ) {
 			result= false;
 		}
@@ -43,11 +46,13 @@ public class PatronChimpumShowService implements AbstractShowService<Patron, Chi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("items", this.repository.allToolsWithoutChimpum(false));
+		final Collection<Item> items = this.repository.allToolsWithoutChimpum(false);
+		items.add(entity.getItem());
+		model.setAttribute("items",items);
 		model.setAttribute("itemId", entity.getItem().getId());
 		model.setAttribute("itemPublished", entity.getItem().isPublished());
 
-		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
+		request.unbind(entity, model,"code","title","description","creationMoment", "startDate","endDate","budget","link","item","item.tipo", "item.name", "item.code","item.technology", "item.description","item.retailPrice","item.optionalLink");
 	
 	}
 

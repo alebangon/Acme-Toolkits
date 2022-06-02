@@ -27,28 +27,28 @@
 	<acme:input-moment code="patron.chimpum.form.label.endDate" path="endDate" />
 	<acme:input-money code="patron.chimpum.form.label.budget" path="budget"/>
 	<acme:input-url code="patron.chimpum.form.label.link" path="link"/>
-		<jstl:if test="${command == 'create' or command == 'update'}">	
-	        <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
+	<jstl:choose>
+		<jstl:when test="${(acme:anyOf(command,'show, update, delete') &&  itemPublished == false) || command=='create'}">
+	        <acme:input-select code="inventor.chimpum.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 ==item.getId() }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId ==item.getId() }"/>
 				</jstl:forEach>
 			</acme:input-select>
-		</jstl:if>	
-	<jstl:if test="${command == 'show'}">
-	 <acme:input-select code="patron.chimpum.form.label.item" path="itemId">
- 		<jstl:forEach items="${items}" var="item">
-			<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ itemId2 == item.getId() }"/>
-		</jstl:forEach>
-	</acme:input-select>
-	<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
-
-	<acme:input-textbox code="inventor.item.form.label.name" path="item.name" readonly="true"/>
-	<acme:input-textbox code="inventor.item.form.label.code" path="item.code" readonly="true"/>
-	<acme:input-textbox code="inventor.item.form.label.technology" path="item.technology" readonly="true"/>
-	<acme:input-textarea code="inventor.item.form.label.description" path="item.description" readonly="true"/>
-	<acme:input-money code="inventor.item.form.label.retail-price" path="item.retailPrice" readonly="true"/>
-	<acme:input-textbox code="inventor.item.form.label.optional-link" path="item.optionalLink" readonly="true"/>
-	</jstl:if>
+		</jstl:when>
+	</jstl:choose>
+		
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
+			<acme:input-textbox code="inventor.item.form.label.tipo" path="item.tipo" readonly="true"/>
+			<acme:input-textbox code="inventor.item.form.label.name" path="item.name" readonly="true"/>
+			<acme:input-textbox code="inventor.item.form.label.code" path="item.code" readonly="true"/>
+			<acme:input-textbox code="inventor.item.form.label.technology" path="item.technology" readonly="true"/>
+			<acme:input-textarea code="inventor.item.form.label.description" path="item.description" readonly="true"/>
+			<acme:input-money code="inventor.item.form.label.retail-price" path="item.retailPrice" readonly="true"/>
+			<acme:input-textbox code="inventor.item.form.label.optional-link" path="item.optionalLink" readonly="true"/>
+		</jstl:when>
+		
+	</jstl:choose>	
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command,'show, update, delete')}">
